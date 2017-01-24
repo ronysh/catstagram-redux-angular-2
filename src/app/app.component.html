@@ -1,3 +1,9 @@
 <h1>
   {{title}}
 </h1>
+<div class="post-list">
+    <section class="post" *ngFor="let post of posts">
+        <img src="{{post.source}}" alt="{{post.description}}" class="photo">
+        <p>{{post.descprition}}</p>
+    </section>
+</div>
