@@ -5,5 +5,6 @@
     <section class="post" *ngFor="let post of posts">
         <img src="{{post.source}}" alt="{{post.description}}" class="photo">
         <p>{{post.descprition}}</p>
+        <span>♥ {{post.likes}}</span> <span>💬 {{post.comments}}</span>
     </section>
 </div>
