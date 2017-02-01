@@ -9,6 +9,8 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
 import { PostListComponent } from './components/post-list/post-list.component';
 import { PostComponent } from './components/post/post.component';
 
+import { PostService } from "./shared/post.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +29,7 @@ import { PostComponent } from './components/post/post.component';
      }
    ])
   ],
-  providers: [],
+  providers: [PostService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
