@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { POSTS } from './shared/mock-data';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +7,4 @@ import { POSTS } from './shared/mock-data';
 })
 export class AppComponent {
   title = 'coolstagram';
-  posts = POSTS;
 }

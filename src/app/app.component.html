@@ -2,9 +2,5 @@
   {{title}}
 </h1>
 <div class="container">
-    <div class="post-list">
-        <div *ngFor="let post of posts">
-            <app-post-detail [post]="post"></app-post-detail>
-        </div><!-- for post of posts -->
-    </div>
+    <app-post-list></app-post-list>
 </div>

@@ -14,8 +14,3 @@
     align-items: stretch;
     background: #d0f1fb;
 }
-
-.post-list {
-    display: flex;
-    flex-wrap: wrap;
-}
