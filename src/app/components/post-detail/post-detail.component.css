@@ -1,3 +1,4 @@
+
 section {
     padding: 10px;
 }
@@ -11,4 +12,6 @@ section {
 :host-context(.post-list) .post {
     max-width: 200px;
     flex: 1 1 calc(33.33% -10px);
+    background-color: #fff;
+    margin: 10px;
 }
