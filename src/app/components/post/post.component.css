@@ -1,0 +1,26 @@
+
+section {
+    padding: 10px;
+}
+.photo{
+    width: calc(100% + 3rem);
+}
+
+:host-context(.post-list) .photo {
+    max-width: 200px;
+}
+:host-context(.post-list) .post {
+    max-width: 200px;
+    flex: 1 1 calc(33.33% -10px);
+    background-color: #fff;
+    margin: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+}
+
+footer span {
+    padding: 5px;
+}

@@ -11,6 +11,9 @@ export class PostListComponent implements OnInit {
 
   constructor() { }
 
+  goToDetails(post){
+      console.log(post.id)
+  }
   ngOnInit() {
   }
 
