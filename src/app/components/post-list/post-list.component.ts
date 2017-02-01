@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router";
 import { POSTS } from '../../shared/mock-data';
 import { PostService } from '../../shared/post.service';
 import { Post } from '../../shared/post.model';
+
 
 @Component({
   selector: 'app-post-list',
@@ -11,10 +13,11 @@ import { Post } from '../../shared/post.model';
 export class PostListComponent implements OnInit {
   posts: Post[];
 
-  constructor(private postService: PostService) { }
+  constructor(private router: Router,
+              private postService: PostService) { }
 
   goToDetails(post){
-      console.log(post.id);
+      this.router.navigate(['/post', post.id]);
   }
   ngOnInit() {
       this.posts = this.postService.getAllPosts()
