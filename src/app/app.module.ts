@@ -26,7 +26,11 @@ import { PostService } from "./shared/post.service";
      {
        path: '',
        component: PostListComponent
-     }
+   },
+   {
+       path: 'post/:id',
+       component: PostDetailComponent
+   }
    ])
   ],
   providers: [PostService],

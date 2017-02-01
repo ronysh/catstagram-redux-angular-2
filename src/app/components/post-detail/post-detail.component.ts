@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../../shared/post.model';
+import { PostService } from '../../shared/post.service';
+
 @Component({
   selector: 'app-post-detail',
   templateUrl: './post-detail.component.html',
@@ -7,10 +9,10 @@ import { Post } from '../../shared/post.model';
 })
 export class PostDetailComponent implements OnInit {
     post: Post;
-    constructor() { }
+    constructor(private postService: PostService) { }
 
     ngOnInit() {
-        // implement postService.getPost(id) id from router
+        this.post = this.postService.getPost(1);
     }
 
 }
