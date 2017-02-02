@@ -2,12 +2,14 @@
 section {
     padding: 10px;
 }
-.photo{
-    width: calc(100% + 3rem);
-}
+
 
 :host-context(.post-list) .photo {
     max-width: 200px;
+}
+
+:host-context(.post-detail) .photo {
+    min-height: 70vh;
 }
 :host-context(.post-list) .post {
     max-width: 200px;
