@@ -10,13 +10,16 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { PostComponent } from './components/post/post.component';
 
 import { PostService } from "./shared/post.service";
+import { CommentService } from "./shared/comment.service";
+import { CommentListComponent } from './components/comment-list/comment-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostDetailComponent,
     PostListComponent,
-    PostComponent
+    PostComponent,
+    CommentListComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { PostService } from "./shared/post.service";
    }
    ])
   ],
-  providers: [PostService],
+  providers: [PostService, CommentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,5 @@
 import { Post } from "./post.model";
+import { Comment } from "./comment.model";
 
 export const POSTS: Post[] = [
     {
@@ -26,5 +27,32 @@ export const POSTS: Post[] = [
         source: 'http://placekitten.com/g/400/400',
         likes: 3,
         comments: 5
+    }
+];
+
+export const COMMENTS: Comment[] = [
+    {
+        id: 1,
+        post: 1,
+        user: 'Catster',
+        text: 'This is so awsome!'
+    },
+    {
+        id: 2,
+        post: 1,
+        user: 'Catstovich',
+        text: 'This is so catty'
+    },
+    {
+        id: 3,
+        post: 1,
+        user: 'Catsting',
+        text: 'This is so cool'
+    },
+    {
+        id: 4,
+        post: 2,
+        user: 'Catstars',
+        text: 'This is so you know'
     }
 ];
