@@ -1,8 +1,12 @@
 <div class="comment-list">
     <div *ngIf="comments">
         <div *ngFor="let comment of comments" class="comment">
-            <span class="user"><b>{{comment.user}}</b> </span>
-            <span>{{comment.text}}</span>
+            <div class="comment">
+                <p class="user">
+                    <b>{{comment.user}}</b>
+                    {{comment.text}}
+                </p>
+            </div>
         </div>
     </div>
 </div>

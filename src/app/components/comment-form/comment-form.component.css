@@ -1,0 +1,21 @@
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+}
+
+input[type=text]{
+    margin: 0.5rem 0rem 0.5rem 0rem;
+    font-size: 1rem;
+    padding: 0.3rem;
+}
+
+button{
+    align-self: flex-start;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    background: #92d6d2;
+    color: #fff;
+}

@@ -1,4 +1,7 @@
 <div class="post-detail">
     <app-post [post]="post"></app-post>
-    <app-comment-list [comments]="comments"></app-comment-list>
+    <div class="comments">
+        <app-comment-list [comments]="comments"></app-comment-list>
+        <app-comment-form></app-comment-form>
+    </div>
 </div>

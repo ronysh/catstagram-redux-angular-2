@@ -12,6 +12,7 @@ import { PostComponent } from './components/post/post.component';
 import { PostService } from "./shared/post.service";
 import { CommentService } from "./shared/comment.service";
 import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentFormComponent } from './components/comment-form/comment-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CommentListComponent } from './components/comment-list/comment-list.com
     PostDetailComponent,
     PostListComponent,
     PostComponent,
-    CommentListComponent
+    CommentListComponent,
+    CommentFormComponent
   ],
   imports: [
     BrowserModule,
