@@ -23,6 +23,13 @@ footer{
     justify-content: space-between;
 }
 
-footer span {
-    padding: 5px;
+
+button{
+    align-self: flex-start;
+    height: 2rem;
+    font-size: 1rem;
+    border: none;
+    background: #92d6d2;
+    color: #fff;
+    flex: 0.48;
 }
