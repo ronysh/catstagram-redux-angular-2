@@ -1,5 +1,9 @@
-<form>
-    <input type="text" placeholder="comment"/>
-    <input type="text" placeholder="author"/>
-    <button type="submit">post</button>
+<form [formGroup]="commentForm">
+    <input type="text" placeholder="author" autofocus="true"
+    formControlName="author"/>
+    <input type="text" placeholder="comment"
+    formControlName="comment"/>
+    <button type="submit" [disabled]="!commentForm.valid">
+        post
+    </button>
 </form>

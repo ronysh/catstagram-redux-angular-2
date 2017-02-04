@@ -19,3 +19,7 @@ button{
     background: #92d6d2;
     color: #fff;
 }
+
+button:disabled{
+    background: #d3f4f2;
+}
