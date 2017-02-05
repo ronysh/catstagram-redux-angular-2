@@ -2,6 +2,9 @@
     <app-post [post]="post"></app-post>
     <div class="comments">
         <app-comment-list [comments]="comments"></app-comment-list>
-        <app-comment-form></app-comment-form>
+        <app-comment-form
+        [post]="post"
+        (onSubmited)="onSubmited()"
+        ></app-comment-form>
     </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { CommentService } from '../../shared/comment.service';
@@ -9,25 +9,31 @@ import { CommentService } from '../../shared/comment.service';
   styleUrls: ['./comment-form.component.css']
 })
 export class CommentFormComponent implements OnInit {
+  @Input() post;
+  @Output() onSubmited = new EventEmitter<any>();
   commentForm: FormGroup;
-  authorControl;
-  commentControl;
+  userControl;
+  textControl;
   constructor(private commentService: CommentService,
               private fb: FormBuilder) {
       this.createForm();
   }
 
   onSubmit(comment) {
-      console.log(comment);
+      comment.post = this.post.id;
+      comment.id = 10;
+      this.commentService.addComment(comment)
+      this.onSubmited.emit();
+      this.commentForm.reset();
   }
 
   createForm(){
       this.commentForm = this.fb.group({
-          author: ['', Validators.required],
-          comment: ['', [Validators.required, Validators.minLength(2)]],
+          user: ['', Validators.required],
+          text: ['', [Validators.required, Validators.minLength(2)]],
       });
-      this.authorControl = this.commentForm.get('author');
-      this.commentControl = this.commentForm.get('comment');
+      this.userControl = this.commentForm.get('user');
+      this.textControl = this.commentForm.get('text');
   }
   ngOnInit() {
   }

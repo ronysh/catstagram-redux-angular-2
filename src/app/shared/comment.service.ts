@@ -7,6 +7,9 @@ export class CommentService {
 
   constructor() { }
 
+  addComment(comment){
+      COMMENTS.push(comment);
+  }
 
   getPostComments(postId: number) {
       return COMMENTS.filter(c => c.post === postId);

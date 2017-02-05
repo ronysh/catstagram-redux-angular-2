@@ -23,12 +23,20 @@ export class PostDetailComponent implements OnInit {
                 private location: Location
             ) { }
 
+    onSubmited(){
+        this.getComments();
+    }
+
+    getComments(){
+        this.comments = this.commentService
+                            .getPostComments(this.post.id);
+    }
+
     ngOnInit() {
         this.route.params.subscribe((params: Params) => {
                 this.post = this.postService
                                 .getPost(+params['id']);
-                this.comments = this.commentService
-                                    .getPostComments(this.post.id);
+                this.getComments();
             });
     }
 
