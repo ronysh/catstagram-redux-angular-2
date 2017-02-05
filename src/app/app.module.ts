@@ -17,6 +17,7 @@ import { CommentService } from "./shared/comment.service";
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { comments } from "./shared/comments";
+import { posts } from "./shared/posts";
 
 @NgModule({
   declarations: [
@@ -42,7 +43,7 @@ import { comments } from "./shared/comments";
        component: PostDetailComponent
    }
    ]),
-   StoreModule.provideStore({comments})
+   StoreModule.provideStore({comments, posts})
   ],
   providers: [PostService, CommentService],
   bootstrap: [AppComponent]

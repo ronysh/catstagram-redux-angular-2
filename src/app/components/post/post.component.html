@@ -2,10 +2,10 @@
     <img src="{{post.source}}" alt="{{post.description}}" class="photo">
     <p>{{post.descprition}}</p>
     <footer>
-        <button>
+        <button (click)="addLike.emit(post)">
             <span>♥ {{post.likes}}</span>
         </button>
-        <button>
+        <button (click)="goToDetails.emit(post)">
             <span>💬 {{post.comments}}</span>
         </button>
     </footer>

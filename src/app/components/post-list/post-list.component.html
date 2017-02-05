@@ -1,5 +1,6 @@
 <div class="post-list">
     <div *ngFor="let post of posts">
-        <app-post [post]="post" (click)="goToDetails(post)"></app-post>
+        <app-post [post]="post" (goToDetails)="goToDetails($event)"
+                                (addLike)="addLike($event)"></app-post>
     </div><!-- for post of posts -->
 </div>
