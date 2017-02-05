@@ -10,7 +10,7 @@ import { CommentService } from '../../shared/comment.service';
 })
 export class CommentFormComponent implements OnInit {
   @Input() post;
-  @Output() onSubmited = new EventEmitter<any>();
+  @Output() addComment = new EventEmitter<any>();
   commentForm: FormGroup;
   userControl;
   textControl;
@@ -20,10 +20,9 @@ export class CommentFormComponent implements OnInit {
   }
 
   onSubmit(comment) {
-      comment.post = this.post.id;
-      comment.id = 10;
-      this.commentService.addComment(comment)
-      this.onSubmited.emit();
+      comment.post = 1;
+    //   this.commentService.addComment(comment)
+      this.addComment.emit(comment);
       this.commentForm.reset();
   }
 

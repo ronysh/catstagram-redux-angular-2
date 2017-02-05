@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
+import { StoreModule } from "@ngrx/store";
+
 import { AppComponent } from './app.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
 import { PostListComponent } from './components/post-list/post-list.component';
@@ -14,6 +16,7 @@ import { PostService } from "./shared/post.service";
 import { CommentService } from "./shared/comment.service";
 import { CommentListComponent } from './components/comment-list/comment-list.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
+import { comments } from "./shared/comments";
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
        path: 'post/:id',
        component: PostDetailComponent
    }
-   ])
+   ]),
+   StoreModule.provideStore({comments})
   ],
   providers: [PostService, CommentService],
   bootstrap: [AppComponent]

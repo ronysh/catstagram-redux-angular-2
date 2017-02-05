@@ -4,7 +4,7 @@
         <app-comment-list [comments]="comments"></app-comment-list>
         <app-comment-form
         [post]="post"
-        (onSubmited)="onSubmited()"
+        (addComment)="addComment($event)"
         ></app-comment-form>
     </div>
 </div>
