@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { CommentService } from '../../shared/comment.service';
 
 @Component({
   selector: 'app-comment-form',
@@ -11,8 +12,13 @@ export class CommentFormComponent implements OnInit {
   commentForm: FormGroup;
   authorControl;
   commentControl;
-  constructor(private fb: FormBuilder) {
+  constructor(private commentService: CommentService,
+              private fb: FormBuilder) {
       this.createForm();
+  }
+
+  onSubmit(comment) {
+      console.log(comment);
   }
 
   createForm(){

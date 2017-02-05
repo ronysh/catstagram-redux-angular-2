@@ -1,4 +1,4 @@
-<form [formGroup]="commentForm">
+<form (ngSubmit)="onSubmit(commentForm.value)" [formGroup]="commentForm">
     <input type="text" placeholder="author" autofocus="true"
     formControlName="author"/>
     <input type="text" placeholder="comment"
