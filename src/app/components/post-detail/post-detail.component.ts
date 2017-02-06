@@ -16,15 +16,17 @@ import { Store } from "@ngrx/store";
   styleUrls: ['./post-detail.component.css']
 })
 export class PostDetailComponent implements OnInit {
-    post: Post;
+    post;
     public comments;
-    private id = 5;
+    private commentId = 5;
     constructor(private postService: PostService,
                 private commentService: CommentService,
                 private _store : Store<any>,
                 private route: ActivatedRoute,
                 private location: Location
-            ) { _store.select('comments')
+            ) { _store.select('posts')
+                  .subscribe(p => this.post = p[0])
+                _store.select('comments')
                   .subscribe(comments => this.comments = comments) }
 
     onSubmited(){
@@ -33,11 +35,15 @@ export class PostDetailComponent implements OnInit {
 
     addComment(comment) {
         this._store.dispatch({type: "ADD_COMMENT", payload: {
-            id: ++this.id,
+            id: ++this.commentId,
             post: 1,
             user: comment.user,
             text: comment.text
         }});
+    }
+
+    addLike(post) {
+        this._store.dispatch({type: 'ADD_LIKE', payload: post.id});
     }
 
     loadComments(){
@@ -49,9 +55,8 @@ export class PostDetailComponent implements OnInit {
 
     ngOnInit() {
         this.route.params.subscribe((params: Params) => {
-                this.post = this.postService
-                                .getPost(+params['id']);
-                this.loadComments();
+                const postId = +params['id'];
+                this._store.dispatch({type: 'LOAD_POST', payload: postId});
             });
     }
 

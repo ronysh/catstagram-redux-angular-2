@@ -1,5 +1,7 @@
 <div class="post-detail">
-    <app-post [post]="post"></app-post>
+    <app-post [post]="post"
+    (addLike)="addLike($event)"
+    ></app-post>
     <div class="comments">
         <app-comment-list [comments]="comments"></app-comment-list>
         <app-comment-form
