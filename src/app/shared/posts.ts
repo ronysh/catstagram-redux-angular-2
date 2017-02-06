@@ -1,8 +1,7 @@
 export const posts = (state=[], action) => {
     switch(action.type) {
         case "LOAD_POSTS":
-            return [...state,
-                    ...action.payload];
+            return [...action.payload];
 
         case "ADD_LIKE":
             return state.map(post => {
