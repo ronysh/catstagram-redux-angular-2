@@ -3,5 +3,4 @@ export class Post {
     descprition: string;
     source: string;
     likes: number;
-    comments: number;
 }
