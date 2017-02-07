@@ -3,12 +3,12 @@ export const posts = (state=[], action) => {
         case "LOAD_POSTS":
             return [...action.payload];
 
-        case "LOAD_POST":
-            return state.filter(post => {
-                if(post.id === action.payload) {
-                    return Object.assign({}, post);
-                }
-            });
+        // case "LOAD_POST":
+        //     return state.filter(post => {
+        //         if(post.id === action.payload) {
+        //             return Object.assign({}, post);
+        //         }
+        //     });
 
         case "ADD_LIKE":
             return state.map(post => {

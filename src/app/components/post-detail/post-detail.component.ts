@@ -24,8 +24,8 @@ export class PostDetailComponent implements OnInit {
                 private _store : Store<any>,
                 private route: ActivatedRoute,
                 private location: Location
-            ) { _store.select('posts')
-                  .subscribe(p => this.post = p[0])
+            ) { _store.select('post')
+                  .subscribe(p => this.post = p)
                 _store.select('comments')
                   .subscribe(comments => this.comments = comments) }
 
@@ -36,14 +36,14 @@ export class PostDetailComponent implements OnInit {
     addComment(comment) {
         this._store.dispatch({type: "ADD_COMMENT", payload: {
             id: ++this.commentId,
-            post: 1,
+            post: this.post.id,
             user: comment.user,
             text: comment.text
         }});
     }
 
     addLike(post) {
-        this._store.dispatch({type: 'ADD_LIKE', payload: post.id});
+        this._store.dispatch({type: 'ADD_LIKE', payload: this.post});
     }
 
     loadComments(){
@@ -56,7 +56,9 @@ export class PostDetailComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe((params: Params) => {
                 const postId = +params['id'];
-                this._store.dispatch({type: 'LOAD_POST', payload: postId});
+                const post = this.postService.getPost(postId)
+                this._store.dispatch({type: 'LOAD_POST', payload: post});
+                this.loadComments();
             });
     }
 
