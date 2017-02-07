@@ -1,10 +1,10 @@
 export const comments = (state=[], action) => {
     switch(action.type){
-            case "LOAD_COMMENTS":
+            case "COMMENTS_RECEIVED":
                 return [
                     ...action.payload
                 ];
-            case "ADD_COMMENT":
+            case "COMMENT_ADDED":
                 return [
                     ...state,
                     action.payload

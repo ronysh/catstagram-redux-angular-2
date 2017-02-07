@@ -13,4 +13,10 @@ export class PostService {
   getPost(id) {
       return POSTS.find(p => p.id === id);
   }
+
+  addLike(id) {
+      let post = POSTS.find(p => p.id === id) ;
+      post.likes += 1;
+      return post;
+  }
 }

@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 import { RouterModule }   from '@angular/router';
 
 import { StoreModule } from "@ngrx/store";
+import { EffectsModule } from '@ngrx/effects';
 
 import { AppComponent } from './app.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
@@ -19,6 +20,7 @@ import { CommentFormComponent } from './components/comment-form/comment-form.com
 import { comments } from "./shared/comments";
 import { posts } from "./shared/post-collection";
 import { post } from "./shared/post";
+import { MainEffects } from "./shared/effects";
 
 @NgModule({
   declarations: [
@@ -44,7 +46,8 @@ import { post } from "./shared/post";
        component: PostDetailComponent
    }
    ]),
-   StoreModule.provideStore({comments, posts, post})
+   StoreModule.provideStore({comments, posts, post}),
+   EffectsModule.run(MainEffects)
   ],
   providers: [PostService, CommentService],
   bootstrap: [AppComponent]

@@ -1,16 +1,9 @@
 export const posts = (state=[], action) => {
     switch(action.type) {
-        case "LOAD_POSTS":
+        case "POSTS_RECEIVED":
             return [...action.payload];
 
-        // case "LOAD_POST":
-        //     return state.filter(post => {
-        //         if(post.id === action.payload) {
-        //             return Object.assign({}, post);
-        //         }
-        //     });
-
-        case "ADD_LIKE":
+        case "LIKE_ADDED":
             return state.map(post => {
                 if(post.id === action.payload) {
                     return Object.assign({}, post, {

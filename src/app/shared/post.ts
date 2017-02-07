@@ -3,13 +3,11 @@
 export const post = (state={}, action) => {
     switch(action.type) {
 
-        case "LOAD_POST":
+        case "POST_RECEIVED":
             return  Object.assign({}, action.payload);
 
-        case "ADD_LIKE":
-            return Object.assign({}, action.payload, {
-                likes: action.payload.likes + 1
-            });
+        case "LIKE_ADDED":
+            return Object.assign({}, action.payload);
 
         default:
             return state;

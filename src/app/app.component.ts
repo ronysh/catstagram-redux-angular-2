@@ -23,8 +23,8 @@ export class AppComponent {
 
 
   ngOnInit() {
-      const posts = this.postService.getAllPosts()
-      this._store.dispatch({type: 'LOAD_POSTS', payload: posts})
+    //   const posts = this.postService.getAllPosts()
+      this._store.dispatch({type: 'LOAD_POSTS', payload: null})
       this.posts = this.postService.getAllPosts()
   }
 }

@@ -9,6 +9,7 @@ export class CommentService {
 
   addComment(comment){
       COMMENTS.push(comment);
+      return comment;
   }
 
   getPostComments(postId: number) {

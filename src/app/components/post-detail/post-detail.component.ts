@@ -43,22 +43,15 @@ export class PostDetailComponent implements OnInit {
     }
 
     addLike(post) {
-        this._store.dispatch({type: 'ADD_LIKE', payload: this.post});
+        this._store.dispatch({type: 'ADD_LIKE', payload: post.id});
     }
 
-    loadComments(){
-        const comments = this.commentService
-                            .getPostComments(this.post.id);
-        this._store.dispatch({type: 'LOAD_COMMENTS', payload: comments});
-
-    }
 
     ngOnInit() {
         this.route.params.subscribe((params: Params) => {
                 const postId = +params['id'];
-                const post = this.postService.getPost(postId)
-                this._store.dispatch({type: 'LOAD_POST', payload: post});
-                this.loadComments();
+                this._store.dispatch({type: 'LOAD_POST', payload: postId});
+                this._store.dispatch({type: 'LOAD_COMMENTS', payload: postId});
             });
     }
 
