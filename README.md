@@ -5,9 +5,9 @@ A mock photo sharing site implemented with the redux pattern. Uses ngrx store.
 ## Purpose
 **Built to examine ngrx/store before introducing to a current  project.**
 
-## Paterns and technologies.
+## Paterns and technologies used.
 
-* Ngrx store and to keep dataflow unidirectional.
+* Ngrx store to keep dataflow unidirectional.
 * Ngrx effects to keep stateful side effects isolated.
 * Angular cli to reduce boiler plate and focus on data flow.
 
@@ -16,4 +16,4 @@ A mock photo sharing site implemented with the redux pattern. Uses ngrx store.
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-### PLEASE NOTE: This is a practice project and should not be used in production.
+### PLEASE NOTE: This project was build for practice and should not be used in production.
