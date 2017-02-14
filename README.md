@@ -15,3 +15,5 @@ A mock photo sharing site implemented with the redux pattern. Uses ngrx store.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## PLEASE NOTE: This is a practice project and should not be used in production.
